@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD - ABOUT</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .stat-number { font-size: 4rem; font-weight: 800; color: var(--primary-color); line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed-top transition-base">
+    <div class="container navbar-wrapper align-items-center">
+      <button class="navbar-toggler mobile-hamburger border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Toggle navigation">
+        <span class="bi bi-list text-white" style="font-size: 2rem;"></span>
+      </button>
+      <a class="navbar-brand m-0" href="index.html">
+        <img src="assets/images/logo.svg" alt="Vanguard Logo" style="height:40px; width:auto; border-radius:4px;">
+      </a>
+      <div class="desktop-menu ms-auto d-flex align-items-center">
+        <a class="nav-link text-primary-brand active-page" href="index.html">Home 1</a>
+        <a class="nav-link" href="home-2.html">Home 2</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="dashboard.html">Login</a>
+        <a href="contact.html" class="btn btn-primary-brand nav-cta ms-4 rounded-0 shadow-sm">Request Protection</a>
+        <button class="theme-toggle theme-toggle-desktop ms-3" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas Navbar -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom border-primary">
+      <img src="assets/images/logo.svg" alt="Vanguard Navbar Logo" style="height:35px; border-radius:4px;">
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <ul class="navbar-nav flex-grow-1 pe-3">
+        <li class="nav-item"><a class="nav-link text-primary-brand" href="index.html">Home 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item mt-3 pt-3 border-top border-secondary"><a class="nav-link" href="dashboard.html"><i class="bi bi-lock-fill me-2"></i> Client Login</a></li>
+      </ul>
+      <div class="mt-auto pt-3">
+        <button class="theme-toggle w-100" aria-label="Toggle Theme"><i class="bi bi-moon-fill me-2"></i> Toggle Theme</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- S1: About Hero -->
+  <section class="hero-section text-center position-relative" style="margin-top: 70px; min-height: 50vh; background: url('https://images.unsplash.com/photo-1541888040529-5775c92c8152?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+    <div class="container position-relative z-index-2 py-5">
+      <h1 class="display-4 fw-bold text-white mb-3">The Vanguard Origin</h1>
+      <p class="lead text-white-50 mb-0 mx-auto" style="max-width: 700px;">Forged in the world's most hostile environments, refined for the corporate sector.</p>
+    </div>
+  </section>
+
+  <!-- S2: Mission Statement -->
+  <section class="py-5 bg-secondary-color text-white">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h6 class="text-primary-brand letter-spacing-2 fw-bold mb-2">OUR DIRECTIVE</h6>
+          <h2>To operate invisibly and ensure absolute continuity of our client's lives.</h2>
+          <p class="text-white-50 mt-4">Vanguard was established by former Tier 1 operators who recognized a critical flaw in private sector security: reactivity. Our doctrine is purely proactive. We eliminate vulnerabilities before they translate into active threats.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 border border-secondary rounded bg-dark shadow-sm">
+            <h5 class="text-primary-brand">Zero Distraction Policy</h5>
+            <p class="text-white-50 small mb-0">Our presence is designed to be felt, not seen. We adapt to your lifestyle seamlessly, ensuring protection without compromising your privacy or personal freedom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: Global Infrastructure -->
+  <section class="py-5">
+    <div class="container py-5 text-center">
+      <h2 class="section-title mb-5 d-block">Global Logistics Network</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 bg-transparent border-0 hover-shadow transition-base">
+            <i class="bi bi-diagram-3 text-primary-brand display-4 mb-3 d-block"></i>
+            <h4>Decentralized Command</h4>
+            <p class="text-muted small">Three identical, geopolitically separated operational centers running 24/7/365 to ensure continuous oversight.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 bg-transparent border-0 hover-shadow transition-base">
+            <i class="bi bi-shield-lock text-primary-brand display-4 mb-3 d-block"></i>
+            <h4>Armory & Assets</h4>
+            <p class="text-muted small">Pre-staged tactical equipment and armored transport in 32 major metropolitan hubs globally.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 bg-transparent border-0 hover-shadow transition-base">
+            <i class="bi bi-airplane text-primary-brand display-4 mb-3 d-block"></i>
+            <h4>Aviation Wing</h4>
+            <p class="text-muted small">Access to long-range and short-haul private aviation capable of rapid extraction at a moment's notice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: Command Leadership -->
+  <section class="py-5 bg-dark border-top border-secondary">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h6 class="text-primary-brand letter-spacing-2 fw-bold mb-2">THE ARCHITECTS</h6>
+        <h2 class="text-white">Leadership Cadre</h2>
+      </div>
+      <div class="row text-center g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="card bg-transparent border-secondary h-100 hover-shadow p-3">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-primary" style="width: 120px; height: 120px;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" class="img-fluid" alt="Director">
+            </div>
+            <h5 class="text-white mb-1">Marcus V.</h5>
+            <p class="text-primary-brand small fw-bold">Director of Operations</p>
+            <p class="text-white-50 small">Former JSOC Commander with 20 years of counter-terrorism experience.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card bg-transparent border-secondary h-100 hover-shadow p-3">
+            <div class="rounded-circle overflow-hidden mx-auto mb-3 border border-2 border-primary" style="width: 120px; height: 120px;">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" class="img-fluid" alt="Intelligence">
+            </div>
+            <h5 class="text-white mb-1">Elena R.</h5>
+            <p class="text-primary-brand small fw-bold">Head of Intelligence</p>
+            <p class="text-white-50 small">Ex-NSA cryptanalyst specializing in digital footprint erasure and surveillance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Global Footer -->
+  <footer class="bg-primary-brand text-white py-5 mt-auto">
+      <div class="container">
+          <div class="row g-4">
+              <!-- 1. Brand + Social -->
+              <div class="col-lg-3 col-md-6 text-start">
+                  <a href="index.html" class="d-inline-block mb-3">
+                      <img src="assets/images/logo.svg" alt="Vanguard Footer Logo" class="footer-logo" style="height:40px; width:auto; border-radius:4px;">
+                  </a>
+                  <p class="text-white-50 small mb-3">Uncompromising security for individuals, executives, and high-profile assets. Discretion guaranteed.</p>
+                  <div class="d-flex gap-2">
+                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  </div>
+              </div>
+              <!-- 2. Company Links -->
+              <div class="col-lg-3 col-md-6 text-start">
+                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Company</h5>
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                      <li><a href="about.html" class="text-white-50 text-decoration-none action-link">About Us</a></li>
+                      <li><a href="services.html" class="text-white-50 text-decoration-none action-link">Our Services</a></li>
+                      <li><a href="team.html" class="text-white-50 text-decoration-none action-link">Our Agents</a></li>
+                      <li><a href="contact.html" class="text-white-50 text-decoration-none action-link">Contact</a></li>
+                  </ul>
+              </div>
+              <!-- 3. Support Links -->
+              <div class="col-lg-3 col-md-6 text-start">
+                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Support</h5>
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                      <li><a href="dashboard.html" class="text-white-50 text-decoration-none action-link">Client Portal</a></li>
+                      <li><a href="faq.html" class="text-white-50 text-decoration-none action-link">FAQ & Protocol</a></li>
+                      <li><a href="privacy.html" class="text-white-50 text-decoration-none action-link">Privacy Policy</a></li>
+                      <li><a href="terms.html" class="text-white-50 text-decoration-none action-link">Terms of Service</a></li>
+                  </ul>
+              </div>
+              <!-- 4. Newsletter -->
+              <div class="col-lg-3 col-md-6 text-start">
+                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Secure Bulletin</h5>
+                  <p class="text-white-50 small mb-3">Subscribe for the latest threat assessments and security updates.</p>
+                  <form class="d-flex border border-light rounded bg-transparent">
+                      <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3" placeholder="Email address..." required>
+                      <button class="btn btn-light rounded-0 border-0 fw-bold px-3 py-2" type="submit"><i class="bi bi-send"></i></button>
+                  </form>
+              </div>
+          </div>
+          <hr class="border-light opacity-25 my-4">
+          <div class="text-center">
+              <p class="mb-0 text-white-50 small">&copy; 2026 Vanguard Executive Protection. All Rights Reserved. Strictly Confidential.</p>
+          </div>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
