@@ -9,22 +9,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    body { background: #0a0a0a; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
-    .portal-nav { background: #000; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 0; }
-    .portal-nav .btn-link { width: auto !important; padding: 0.25rem !important; }
-    .sidebar-portal { background: rgba(255,255,255,0.02); border-right: 1px solid rgba(255,255,255,0.1); min-height: calc(100vh - 73px); }
-    .nav-portal-link { color: rgba(255,255,255,0.5); text-decoration: none; padding: 0.8rem 1.5rem; display: flex; align-items: center; transition: all 0.3s; border-left: 3px solid transparent; }
-    .nav-portal-link:hover, .nav-portal-link.active { color: var(--primary-brand); background: rgba(255,255,255,0.05); border-left-color: var(--primary-brand); }
-    .card-portal { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; }
-    .mobile-nav-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-    .mobile-nav-scroll::-webkit-scrollbar { display: none; }
-    .active-mobile-link { color: var(--primary-brand) !important; font-weight: bold; border-bottom: 2px solid var(--primary-brand); padding-bottom: 4px; }
     .risk-high { color: #ff3e3e; }
     .risk-med { color: #ffb800; }
     .risk-low { color: #00d1ff; }
   </style>
 </head>
-<body>
+<body class="portal-body">
 
   <!-- Portal Header -->
   <header class="portal-nav px-2 px-md-4">
