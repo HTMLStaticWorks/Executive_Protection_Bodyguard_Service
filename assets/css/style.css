@@ -30,6 +30,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,24 +73,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 280px - 1100px -> Mobile/Tablet */
 @media (max-width: 1100px) {
+  .navbar { padding-bottom: 5px; }
   .desktop-menu { display: none !important; }
   .mobile-hamburger { display: block !important; }
   .navbar-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      position: relative;
   }
   .navbar-brand {
-      margin: 0 auto;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      margin: 0;
+      order: 1;
   }
   .mobile-hamburger {
-      position: absolute;
-      left: 15px;
-      z-index: 100;
+      margin: 0;
+      order: 2;
   }
   .nav-cta, .theme-toggle-desktop { display: none !important; }
   
@@ -108,7 +108,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Offcanvas Menu for Mobile */
 .offcanvas { background-color: var(--secondary-color); color: #fff; }
-.offcanvas-header { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.offcanvas-header { 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    justify-content: flex-end !important;
+}
+.offcanvas-header img {
+    display: none !important;
+}
+.offcanvas-body .border-top {
+    border-top: none !important;
+}
 .offcanvas .nav-link { 
     color: #fff; 
     font-size: 1.2rem; 
@@ -131,26 +140,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 .desktop-menu .nav-link:hover { color: var(--primary-color); }
 
+/* Header Navigation Buttons */
+.header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Standardize height for all buttons */
+    padding: 0 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    border-width: 1px;
+}
+
+.header-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+.btn-primary-brand.header-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000 !important;
+}
+
+.btn-outline-light.header-btn {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-outline-light.header-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
 /* Theme Toggle Button */
-.theme-toggle {
+.theme-toggle, .rtl-toggle {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.3);
     color: #fff;
-    border-radius: 5px;
-    padding: 8px 15px;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 0.3s;
+    padding: 0;
 }
-.theme-toggle:hover {
+.theme-toggle:hover, .rtl-toggle:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
 }
 
 /* Sections */
 .hero-section {
-    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('../images/bg-hero.jpg') center/cover;
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('../images/hero-elite.png') center/cover;
     color: #fff !important;
-    min-height: 80vh;
+    height: calc(100vh - 70px);
+    overflow: hidden;
     display: flex;
     align-items: center;
     border-bottom: 3px solid var(--primary-color);
@@ -204,6 +258,11 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(5px);
 }
 
+footer .action-link:hover {
+    color: #000 !important;
+    opacity: 1 !important;
+}
+
 /* Active Page Highlight for Nav */
 .nav-link.active-page {
     color: var(--primary-color) !important;
@@ -219,4 +278,70 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
     background-color: var(--primary-color);
     border-radius: 2px;
+}
+
+/* Responsive Overrides for Mobile */
+@media (max-width: 575.98px) {
+  /* Stack large primary button groups vertically */
+  div.d-flex:not(.portal-nav div):has(> .btn:not(.btn-sm):not(.rounded-circle)) {
+      flex-direction: column !important;
+  }
+  div.d-flex:not(.portal-nav div):has(> .btn:not(.btn-sm):not(.rounded-circle)) > * {
+      width: 100% !important;
+      text-align: center;
+  }
+  /* Fix tight padding issues on 300px devices */
+  .glass-card {
+      padding: 1.5rem !important;
+  }
+  .btn.btn-lg {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      width: 100%;
+      font-size: 0.9rem;
+      white-space: nowrap;
+  }
+}
+
+/* Responsive Center Alignment for tablet/mobile */
+@media (max-width: 991.98px) {
+  .col-lg-5, .col-lg-6, .col-lg-8, .col-md-6 {
+      text-align: center !important;
+  }
+  .list-unstyled.d-flex.flex-column {
+      align-items: center !important;
+  }
+  .timeline-step {
+      text-align: left !important;
+  }
+  footer .d-flex:has(> .btn-outline-light),
+  footer .d-flex:has(> .btn-outline-dark) {
+      justify-content: center !important;
+  }
+}
+
+/* Responsive text color for marked sections in light mode */
+[data-bs-theme="light"] .bg-secondary-color.text-white,
+[data-bs-theme="light"] .bg-secondary-color .text-white {
+    color: var(--heading-color) !important;
+}
+[data-bs-theme="light"] .bg-secondary-color .text-white-50 {
+    color: var(--text-color) !important;
+    opacity: 0.8 !important;
+}
+
+/* Guard text elements strictly nested within exclusively dark components */
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6,
+.glass-card h1, .glass-card h2, .glass-card h3, .glass-card h4, .glass-card h5, .glass-card h6,
+.hero-section h1, .hero-section h2, .hero-section h3, .hero-section h4, .hero-section h5, .hero-section h6 {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="light"] .bg-dark .text-white,
+[data-bs-theme="light"] .glass-card .text-white {
+    color: #ffffff !important;
+}
+[data-bs-theme="light"] .bg-dark .text-white-50,
+[data-bs-theme="light"] .glass-card .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }

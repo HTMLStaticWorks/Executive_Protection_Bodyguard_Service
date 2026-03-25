@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VANGUARD - ACTIVE ASSETS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background: #0a0a0a; color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
+    .portal-nav { background: #000; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 0; }
+    .portal-nav .btn-link { width: auto !important; padding: 0.25rem !important; }
+    .sidebar-portal { background: rgba(255,255,255,0.02); border-right: 1px solid rgba(255,255,255,0.1); min-height: calc(100vh - 73px); }
+    .nav-portal-link { color: rgba(255,255,255,0.5); text-decoration: none; padding: 0.8rem 1.5rem; display: flex; align-items: center; transition: all 0.3s; border-left: 3px solid transparent; }
+    .nav-portal-link:hover, .nav-portal-link.active { color: var(--primary-brand); background: rgba(255,255,255,0.05); border-left-color: var(--primary-brand); }
+    .card-portal { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; }
+    .mobile-nav-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .mobile-nav-scroll::-webkit-scrollbar { display: none; }
+    .active-mobile-link { color: var(--primary-brand) !important; font-weight: bold; border-bottom: 2px solid var(--primary-brand); padding-bottom: 4px; }
+    .status-badge { font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 0; text-transform: uppercase; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- Portal Header -->
+  <header class="portal-nav px-2 px-md-4">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between flex-nowrap">
+        <div class="d-flex align-items-center gap-3 flex-nowrap">
+          <button class="btn btn-link text-white-50 d-md-none p-0 border-0 d-inline-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" style="width: auto;">
+            <i class="bi bi-list h3 mb-0"></i>
+          </button>
+          <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
+            <img src="assets/images/logo.svg" alt="Vanguard" style="height: 40px;">
+          </a>
+          <div class="vr bg-secondary opacity-50 d-none d-md-block" style="height: 30px;"></div>
+          <h6 class="mb-0 fw-bold tracking-wider d-none d-md-block x-small opacity-75 text-uppercase ms-2">Operations Portal</h6>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="text-end d-none d-sm-block">
+            <div class="small fw-bold text-white">Alexander K.</div>
+            <div class="x-small text-white-50">Level 4 Clearance</div>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-dark p-1 rounded-circle" data-bs-toggle="dropdown"><img src="assets/images/agent-1.png" class="rounded-circle" style="width: 35px; height: 35px;"></button>
+            <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
+              <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+              <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+              <li><hr class="dropdown-divider border-secondary"></li>
+              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="row">
+      <!-- Portal Sidebar (Desktop Only) -->
+      <aside class="col-lg-2 col-md-3 p-0 sidebar-portal d-none d-md-block">
+        <nav class="mt-4">
+          <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
+          <a href="active-assets.html" class="nav-portal-link active"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
+          <a href="itineraries.html" class="nav-portal-link"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
+          <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
+          <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
+          <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+          <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+          <div class="px-4 py-2 x-small text-success"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
+        </nav>
+      </aside>
+
+      <!-- Mobile Sidebar (Offcanvas) -->
+      <div class="offcanvas offcanvas-start bg-dark text-white border-end border-light border-opacity-10" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header justify-content-end p-3">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <nav class="mt-2">
+            <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
+            <a href="active-assets.html" class="nav-portal-link active"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
+            <a href="itineraries.html" class="nav-portal-link"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
+            <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
+            <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
+            <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+            <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+            <div class="px-4 py-2 x-small text-success"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Portal Main Content -->
+      <main class="col-lg-10 col-md-9 p-4">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+          <h2 class="fw-bold mb-0">Active Assets</h2>
+          <button class="btn btn-primary-brand btn-sm rounded-0">REGISTER NEW ASSET</button>
+        </div>
+
+        <!-- Protection Agents Section -->
+        <div class="mb-5">
+          <h5 class="fw-bold mb-3 text-uppercase x-small tracking-wider text-white-50">Active Protection Agents</h5>
+          <div class="card card-portal shadow-sm">
+            <div class="table-responsive">
+              <table class="table table-dark table-hover mb-0 align-middle">
+                <thead class="bg-white bg-opacity-5">
+                  <tr>
+                    <th class="ps-4 border-0 x-small text-uppercase">Agent ID</th>
+                    <th class="border-0 x-small text-uppercase">Specialization</th>
+                    <th class="border-0 x-small text-uppercase">Current Location</th>
+                    <th class="border-0 x-small text-uppercase">Status</th>
+                    <th class="pe-4 border-0 x-small text-uppercase text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="ps-4 border-light border-opacity-10"><span class="font-monospace">V-AGT-772</span></td>
+                    <td class="border-light border-opacity-10">High-Threat Protection</td>
+                    <td class="border-light border-opacity-10">Seoul, South Korea</td>
+                    <td class="border-light border-opacity-10"><span class="status-badge bg-success bg-opacity-25 text-success border border-success border-opacity-50">Deployed</span></td>
+                    <td class="pe-4 border-light border-opacity-10 text-end"><button class="btn btn-sm btn-link text-primary-brand p-0">Contact</button></td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4 border-light border-opacity-10"><span class="font-monospace">V-AGT-441</span></td>
+                    <td class="border-light border-opacity-10">Intelligence & Counter-Surveillance</td>
+                    <td class="border-light border-opacity-10">Zurich, Switzerland</td>
+                    <td class="border-light border-opacity-10"><span class="status-badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-50">On Mission</span></td>
+                    <td class="pe-4 border-light border-opacity-10 text-end"><button class="btn btn-sm btn-link text-primary-brand p-0">Contact</button></td>
+                  </tr>
+                  <tr>
+                    <td class="ps-4 border-0"><span class="font-monospace">V-AGT-905</span></td>
+                    <td class="border-0">Medical Support / Paramedic</td>
+                    <td class="border-0">London, UK</td>
+                    <td class="border-0"><span class="status-badge bg-white bg-opacity-10 text-white-50 border border-white border-opacity-25">Available</span></td>
+                    <td class="pe-4 border-0 text-end"><button class="btn btn-sm btn-link text-primary-brand p-0">Assign</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tactical Vehicles Section -->
+        <div>
+          <h5 class="fw-bold mb-3 text-uppercase x-small tracking-wider text-white-50">Tactical & Secure Transport</h5>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card card-portal p-3">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <h6 class="fw-bold mb-0">Armored SUV - Level VR7</h6>
+                    <small class="text-white-50">Unit: V-VEH-09</small>
+                  </div>
+                  <span class="status-badge bg-success bg-opacity-25 text-success border border-success border-opacity-50">Ready</span>
+                </div>
+                <div class="x-small text-white-50 mb-1">Location: NYC Logistics Hub</div>
+                <div class="progress bg-white bg-opacity-10 rounded-0" style="height: 4px;">
+                  <div class="progress-bar bg-primary-brand" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-portal p-3">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <h6 class="fw-bold mb-0">Private Jet - Gulfstream G650</h6>
+                    <small class="text-white-50">Unit: V-AIR-02</small>
+                  </div>
+                  <span class="status-badge bg-primary bg-opacity-25 text-primary border border-primary border-opacity-50">In Transit</span>
+                </div>
+                <div class="x-small text-white-50 mb-1">Route: JFK -> ICN</div>
+                <div class="progress bg-white bg-opacity-10 rounded-0" style="height: 4px;">
+                  <div class="progress-bar bg-primary-brand" style="width: 65%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-portal p-3">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <h6 class="fw-bold mb-0">Secure Safehouse - 'Sierra'</h6>
+                    <small class="text-white-50">Unit: V-LOC-21</small>
+                  </div>
+                  <span class="status-badge bg-success bg-opacity-25 text-success border border-success border-opacity-50">Active</span>
+                </div>
+                <div class="x-small text-white-50 mb-1">Status: Fully Provisioned</div>
+                <div class="progress bg-white bg-opacity-10 rounded-0" style="height: 4px;">
+                  <div class="progress-bar bg-primary-brand" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="mt-auto py-3 border-top border-light border-opacity-10 text-center x-small text-white-50">
+    &copy; 2026 Vanguard Executive Protection. System Version 4.8.2. Strictly Confidential.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

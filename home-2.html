@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vanguard - Secondary Home</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -24,15 +24,25 @@
       <a class="navbar-brand m-0" href="index.html">
         <img src="assets/images/logo.svg" alt="Vanguard Logo" style="height:40px; width:auto; border-radius:4px;">
       </a>
+      
+      
+      
       <div class="desktop-menu ms-auto d-flex align-items-center">
         <a class="nav-link" href="index.html">Home 1</a>
-        <a class="nav-link text-primary-brand active-page" href="home-2.html">Home 2</a>
+        <a class="nav-link" href="home-2.html">Home 2</a>
         <a class="nav-link" href="services.html">Services</a>
-        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="risk-agents.html">Agents</a>
+        <a class="nav-link" href="testimonials-faq.html">FAQ</a>
         <a class="nav-link" href="contact.html">Contact</a>
-        <a class="nav-link" href="dashboard.html">Login</a>
-        <a href="contact.html" class="btn btn-primary-brand nav-cta ms-4 rounded-0 shadow-sm">Request Protection</a>
-        <button class="theme-toggle theme-toggle-desktop ms-3" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+        <div class="ms-4 d-flex align-items-center gap-2">
+            <a href="login.html" class="header-btn btn btn-outline-light">Login</a>
+            <a href="register.html" class="header-btn btn btn-outline-light">Signup</a>
+            <a href="dashboard.html" class="header-btn btn btn-primary-brand text-dark">Portal</a>
+        </div>
+        <div class="ms-3 d-flex align-items-center gap-1">
+            <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+            <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        </div>
       </div>
     </div>
   </nav>
@@ -46,32 +56,39 @@
     <div class="offcanvas-body d-flex flex-column">
       <ul class="navbar-nav flex-grow-1 pe-3">
         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-        <li class="nav-item"><a class="nav-link text-primary-brand" href="home-2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="risk-agents.html">Agents</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials-faq.html">FAQ</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item mt-3 pt-3 border-top border-secondary"><a class="nav-link" href="dashboard.html"><i class="bi bi-lock-fill me-2"></i> Client Login</a></li>
+        <li class="nav-item mt-3 pt-3 border-top border-secondary">
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-light btn-sm rounded-0 text-start ps-3">Login</a>
+                <a href="register.html" class="btn btn-outline-light btn-sm rounded-0 text-start ps-3">Signup</a>
+                <a href="dashboard.html" class="btn btn-primary-brand btn-sm rounded-0 text-dark fw-bold text-start ps-3">Portal</a>
+            </div>
+        </li>
       </ul>
-      <div class="mt-auto pt-3">
-        <button class="theme-toggle w-100" aria-label="Toggle Theme"><i class="bi bi-moon-fill me-2"></i> Toggle Theme</button>
-      </div>
-    </div>
+      <div class="mt-auto pt-3 border-top border-secondary d-flex justify-content-around">
+        <button class="theme-toggle btn text-white" aria-label="Toggle Theme"><i class="bi bi-moon-fill me-2"></i> Theme</button>
+        <button class="rtl-toggle btn text-white" aria-label="Toggle RTL"><i class="bi bi-translate me-2"></i> RTL</button>
+      </div></div></div></div>
   </div>
 
   <!-- S1: Left Aligned Hero Offset Layout -->
   <section class="hero-section text-start bg-dark position-relative overflow-hidden" style="margin-top: 70px; background: #000;">
     <div class="container py-5">
-      <div class="row align-items-center mb-5">
-        <div class="col-lg-6 position-relative z-index-2 py-5">
-            <h6 class="text-primary-brand mb-3 fw-bold letter-spacing-2"><i class="bi bi-shield-check"></i> SPECIALIZED ASSET PROTECTION</h6>
-            <h1 class="display-4 fw-bold mb-4">Tactical Precision.<br>Absolute Discretion.</h1>
-            <p class="lead mb-5 opacity-75">We mitigate risk before it happens. Proactive, invisible security solutions for the world's most vulnerable and influential targets.</p>
+      <div class="row align-items-center mb-4">
+        <div class="col-lg-6 position-relative z-index-2 py-4">
+            <h6 class="text-primary-brand mb-2 fw-bold letter-spacing-2"><i class="bi bi-shield-check"></i> ELITE PROTECTION</h6>
+            <h1 class="display-5 fw-bold mb-3">Tactical Precision.<br>Absolute Discretion.</h1>
+            <p class="lead mb-4 opacity-75">Proactive, invisible security solutions for vulnerable and high-profile targets.</p>
             <div class="d-flex gap-3">
-                <a href="services.html" class="btn btn-primary-brand btn-lg border-0 shadow-lg">Get Started</a>
-                <a href="about.html" class="btn btn-outline-secondary text-white btn-lg border-2">Our Operatives</a>
+                <a href="services.html" class="btn btn-primary-brand btn-lg border-0 shadow-lg px-4">Get Started</a>
+                <a href="about.html" class="btn btn-outline-secondary text-white btn-lg border-2 px-4">Our Operatives</a>
             </div>
         </div>
-        <div class="col-lg-6 position-absolute end-0 top-0 h-100 d-none d-lg-block w-50" style="background: url('https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover; filter: grayscale(100%) opacity(0.6);">
+        <div class="col-lg-6 position-absolute end-0 top-0 h-100 d-none d-lg-block w-50" style="background: url('assets/images/tactical-hero.png') center/cover; filter: grayscale(100%) opacity(0.6);">
            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, #000 0%, transparent 100%);"></div>
         </div>
       </div>
@@ -152,6 +169,48 @@
       </div>
   </section>
 
+  <!-- S4.5: Cybersecurity & Digital Overwatch Section -->
+  <section class="py-5 position-relative bg-dark border-bottom border-secondary">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(8,16,25,0.95) 0%, rgba(15,15,15,0.95) 100%), url('assets/images/cyber-security.png') center/cover;"></div>
+      <div class="container py-5 position-relative z-index-2">
+          <div class="row align-items-center g-5">
+              <!-- Text Area -->
+              <div class="col-lg-6 order-lg-2 text-start">
+                  <h6 class="text-primary-brand fw-bold letter-spacing-2 mb-2"><i class="bi bi-broadcast"></i> CYBER WARFARE DIVISION</h6>
+                  <h2 class="mb-4 text-white">Digital Overwatch & Secure Comm-Links.</h2>
+                  <p class="text-white-50 mb-4">Physical protection is obsolete without severe digital countermeasures. Our cyber-defense specialists intercept tracking attempts, scrub digital footprints, and secure all communication channels against zero-day exploits.</p>
+                  <ul class="list-unstyled d-flex flex-column gap-3 mb-0 text-white-50">
+                      <li><i class="bi bi-shield-lock-fill text-primary-brand me-2"></i> Encrypted Satellite Communication</li>
+                      <li><i class="bi bi-wifi-off text-primary-brand me-2"></i> Real-time GSM/GPS Jamming Protocols</li>
+                      <li><i class="bi bi-hdd-network-fill text-primary-brand me-2"></i> Deep-Web Threat Monitoring</li>
+                  </ul>
+              </div>
+              <!-- Interface Mockup -->
+              <div class="col-lg-6 order-lg-1">
+                  <div class="glass-card p-4 p-md-5 rounded shadow-lg border border-primary position-relative overflow-hidden text-start">
+                      <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--primary-color) 2px, var(--primary-color) 4px); background-size: 100% 4px; pointer-events: none;"></div>
+                      <div class="d-flex align-items-center mb-4 position-relative z-index-2">
+                          <i class="bi bi-terminal text-primary-brand display-5 me-3"></i>
+                          <div>
+                              <h5 class="text-white mb-0 fw-bold">System Status</h5>
+                              <span class="text-success small fw-bold"><i class="bi bi-check-circle-fill me-1"></i> ENCRYPTED & SECURE</span>
+                          </div>
+                      </div>
+                      <div class="progress mb-4 position-relative z-index-2" style="height: 6px; background: rgba(255,255,255,0.1);">
+                          <div class="progress-bar bg-primary-brand progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="bg-dark rounded p-3 font-monospace position-relative z-index-2 border border-secondary shadow-sm">
+                          <p class="text-primary-brand small mb-2">> Initiating ghost protocol...</p>
+                          <p class="text-white-50 small mb-2">> Intercepting rogue signals... <span class="text-success">[0] Detected.</span></p>
+                          <p class="text-white-50 small mb-2">> Scrubbing client metadata... <span class="text-success">[OK].</span></p>
+                          <p class="text-white-50 small mb-0">> Establishing pipeline... <span class="text-primary-brand fw-bold">[ACTIVE]</span></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
   <!-- S5: Global Reach Map Mockup -->
   <section class="py-5 my-5">
       <div class="container">
@@ -188,7 +247,7 @@
               <!-- 1. Brand + Social -->
               <div class="col-lg-3 col-md-6 text-start">
                   <a href="index.html" class="d-inline-block mb-3">
-                      <img src="assets/images/logo.svg" alt="Vanguard Footer Logo" class="footer-logo" style="height:40px; width:auto; border-radius:4px; filter: invert(1);">
+                      <img src="assets/images/logo.svg" alt="Vanguard Footer Logo" class="footer-logo" style="height:40px; width:auto; border-radius:4px;">
                   </a>
                   <p class="small mb-3 fw-bold opacity-75">Uncompromising security for individuals, executives, and high-profile assets. Discretion guaranteed.</p>
                   <div class="d-flex gap-2">
@@ -203,7 +262,8 @@
                   <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fw-bold">
                       <li><a href="about.html" class="text-dark text-decoration-none action-link opacity-75">About Us</a></li>
                       <li><a href="services.html" class="text-dark text-decoration-none action-link opacity-75">Our Services</a></li>
-                      <li><a href="team.html" class="text-dark text-decoration-none action-link opacity-75">Our Agents</a></li>
+                      <li><a href="risk-agents.html" class="text-dark text-decoration-none action-link opacity-75">Risk & Agents</a></li>
+                      <li><a href="testimonials-faq.html" class="text-dark text-decoration-none action-link opacity-75">Success Stories</a></li>
                       <li><a href="contact.html" class="text-dark text-decoration-none action-link opacity-75">Contact</a></li>
                   </ul>
               </div>
@@ -212,7 +272,7 @@
                   <h5 class="text-uppercase mb-3 fw-bold fs-6">Support</h5>
                   <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fw-bold">
                       <li><a href="dashboard.html" class="text-dark text-decoration-none action-link opacity-75">Client Portal</a></li>
-                      <li><a href="faq.html" class="text-dark text-decoration-none action-link opacity-75">FAQ & Protocol</a></li>
+                      <li><a href="testimonials-faq.html" class="text-dark text-decoration-none action-link opacity-75">FAQ & Protocol</a></li>
                       <li><a href="privacy.html" class="text-dark text-decoration-none action-link opacity-75">Privacy Policy</a></li>
                       <li><a href="terms.html" class="text-dark text-decoration-none action-link opacity-75">Terms of Service</a></li>
                   </ul>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VANGUARD - SERVICES</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -24,15 +24,25 @@
       <a class="navbar-brand m-0" href="index.html">
         <img src="assets/images/logo.svg" alt="Vanguard Logo" style="height:40px; width:auto; border-radius:4px;">
       </a>
+      
+      
+      
       <div class="desktop-menu ms-auto d-flex align-items-center">
-        <a class="nav-link text-primary-brand active-page" href="index.html">Home 1</a>
+        <a class="nav-link" href="index.html">Home 1</a>
         <a class="nav-link" href="home-2.html">Home 2</a>
         <a class="nav-link" href="services.html">Services</a>
-        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="risk-agents.html">Agents</a>
+        <a class="nav-link" href="testimonials-faq.html">FAQ</a>
         <a class="nav-link" href="contact.html">Contact</a>
-        <a class="nav-link" href="dashboard.html">Login</a>
-        <a href="contact.html" class="btn btn-primary-brand nav-cta ms-4 rounded-0 shadow-sm">Request Protection</a>
-        <button class="theme-toggle theme-toggle-desktop ms-3" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+        <div class="ms-4 d-flex align-items-center gap-2">
+            <a href="login.html" class="header-btn btn btn-outline-light">Login</a>
+            <a href="register.html" class="header-btn btn btn-outline-light">Signup</a>
+            <a href="dashboard.html" class="header-btn btn btn-primary-brand text-dark">Portal</a>
+        </div>
+        <div class="ms-3 d-flex align-items-center gap-1">
+            <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+            <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        </div>
       </div>
     </div>
   </nav>
@@ -45,22 +55,29 @@
     </div>
     <div class="offcanvas-body d-flex flex-column">
       <ul class="navbar-nav flex-grow-1 pe-3">
-        <li class="nav-item"><a class="nav-link text-primary-brand" href="index.html">Home 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="risk-agents.html">Agents</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials-faq.html">FAQ</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item mt-3 pt-3 border-top border-secondary"><a class="nav-link" href="dashboard.html"><i class="bi bi-lock-fill me-2"></i> Client Login</a></li>
+        <li class="nav-item mt-3 pt-3 border-top border-secondary">
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-outline-light btn-sm rounded-0 text-start ps-3">Login</a>
+                <a href="register.html" class="btn btn-outline-light btn-sm rounded-0 text-start ps-3">Signup</a>
+                <a href="dashboard.html" class="btn btn-primary-brand btn-sm rounded-0 text-dark fw-bold text-start ps-3">Portal</a>
+            </div>
+        </li>
       </ul>
-      <div class="mt-auto pt-3">
-        <button class="theme-toggle w-100" aria-label="Toggle Theme"><i class="bi bi-moon-fill me-2"></i> Toggle Theme</button>
-      </div>
-    </div>
+      <div class="mt-auto pt-3 border-top border-secondary d-flex justify-content-around">
+        <button class="theme-toggle btn text-white" aria-label="Toggle Theme"><i class="bi bi-moon-fill me-2"></i> Theme</button>
+        <button class="rtl-toggle btn text-white" aria-label="Toggle RTL"><i class="bi bi-translate me-2"></i> RTL</button>
+      </div></div></div></div>
   </div>
 
 
   <!-- S1: Services Hero -->
-  <section class="hero-section text-center position-relative" style="margin-top: 70px; min-height: 50vh; background: url('https://images.unsplash.com/photo-1614064019184-ee2dd1d7945d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;">
+  <section class="hero-section text-center position-relative" style="margin-top: 70px; min-height: 50vh; background: url('assets/images/tactical-hero.png') center/cover;">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
     <div class="container position-relative z-index-2 py-5">
       <h1 class="display-4 fw-bold text-white mb-3">Protection Divisions</h1>
@@ -161,9 +178,139 @@
     </div>
   </section>
   
+  <!-- S5: Tactical Assets & Fleet -->
+  <section class="py-5 bg-secondary-color border-top border-secondary">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h6 class="text-primary-brand letter-spacing-2 fw-bold mb-2">HARDWARE & LOGISTICS</h6>
+        <h2 class="text-white">Operational Assets & Fleet</h2>
+        <p class="text-white-50 mx-auto" style="max-width: 700px;">Superior intelligence requires superior equipment. We maintain a proprietary fleet of armored assets and surveillance technology.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card bg-dark border-secondary overflow-hidden rounded-0">
+            <div style="height: 200px; background: url('assets/images/armored-truck.png') center/cover;"></div>
+            <div class="card-body p-4 border-top border-primary">
+              <h5 class="text-white">B7 Armored Convoy</h5>
+              <p class="text-white-50 small mb-0">Ballistic protection against high-caliber rounds and explosive devices. Internal oxygen filtration and run-flat systems.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card bg-dark border-secondary overflow-hidden rounded-0">
+            <div style="height: 200px; background: url('assets/images/drone-sec.png') center/cover;"></div>
+            <div class="card-body p-4 border-top border-primary">
+              <h5 class="text-white">UAV Surveillance Swarm</h5>
+              <p class="text-white-50 small mb-0">Thermal-imaging drones for perimeter over-watch and advance route reconnaissance in hostile urban centers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card bg-dark border-secondary overflow-hidden rounded-0">
+            <div style="height: 200px; background: url('assets/images/comms-hub.png') center/cover;"></div>
+            <div class="card-body p-4 border-top border-primary">
+              <h5 class="text-white">Mobile Comms Hub</h5>
+              <p class="text-white-50 small mb-0">Satellite-linked encrypted data terminals ensuring the principal remains connected regardless of local infrastructure state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: Service Tiers / Protection Levels -->
+  <section class="py-5 bg-dark border-top border-secondary">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+         <h6 class="text-primary-brand letter-spacing-2 fw-bold mb-2">PROTECTION MATRIX</h6>
+         <h2 class="text-white">Service Readiness Tiers</h2>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4">
+          <div class="p-4 bg-secondary-color border border-secondary text-center">
+            <div class="badge bg-primary-brand text-dark rounded-0 mb-3 px-3 py-2 fw-bold">TIER 1</div>
+            <h4 class="text-white">Elite Discrete</h4>
+            <ul class="list-unstyled text-white-50 small mb-4">
+              <li>2x Senior CPOs (Undercover)</li>
+              <li>Armored Executive Sedan</li>
+              <li>24/7 Intel Monitoring</li>
+              <li>Digital Vulnerability Sweep</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-primary-brand w-100">Select Tier</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-secondary-color border border-primary text-center position-relative">
+            <div class="position-absolute top-0 start-50 translate-middle badge bg-primary-brand text-dark rounded-0 px-3 py-2 fw-bold">RECOMMENDED</div>
+            <div class="badge bg-primary-brand text-dark rounded-0 mb-3 px-3 py-2 fw-bold mt-2">TIER 2</div>
+            <h4 class="text-white">High-Threat Logistics</h4>
+            <ul class="list-unstyled text-white-50 small mb-4">
+              <li>4x Tactical Agents (Overt)</li>
+              <li>2x Armored SUVs (Lead/Chase)</li>
+              <li>Advance Team Route Clearance</li>
+              <li>Bio-Medical First Response</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary-brand text-dark w-100 fw-bold">Select Tier</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="p-4 bg-secondary-color border border-secondary text-center">
+            <div class="badge bg-primary-brand text-dark rounded-0 mb-3 px-3 py-2 fw-bold">TIER 3</div>
+            <h4 class="text-white">Sovereign Protection</h4>
+            <ul class="list-unstyled text-white-50 small mb-4">
+              <li>Full Tactical Platoon</li>
+              <li>Aerial Drone Support</li>
+              <li>Maritime/Air Extraction Readiness</li>
+              <li>Secure Compound Establishing</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-primary-brand w-100">Select Tier</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7: Global Response Network -->
+  <section class="py-5 bg-secondary-color border-top border-secondary">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <h2 class="text-white mb-4">Rapid Response Network</h2>
+          <p class="text-white-50 mb-5">Time is the ultimate vulnerability. Vanguard's "Always-On" network ensures that help is never more than a few hours away, anywhere on the planet.</p>
+          <div class="row g-4">
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-clock-history text-primary-brand fs-1 me-3"></i>
+                <div>
+                  <h4 class="text-white mb-0">4 Hours</h4>
+                  <p class="text-white-50 small mb-0">Domestic Response</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-airplane-engines text-primary-brand fs-1 me-3"></i>
+                <div>
+                  <h4 class="text-white mb-0">12 Hours</h4>
+                  <p class="text-white-50 small mb-0">Global Deployment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-5 bg-dark border border-secondary text-center">
+             <h4 class="text-white mb-3">Imminent Threat?</h4>
+             <p class="text-white-50 small mb-4">Immediate tactical consultation available 24/7/365.</p>
+             <a href="contact.html" class="btn btn-primary-brand text-dark fw-bold px-4 py-2">EMERGENCY LINE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Global Footer -->
-  <footer class="bg-primary-brand text-white py-5 mt-auto">
+  <footer class="bg-primary-brand text-dark py-5 mt-auto">
       <div class="container">
           <div class="row g-4">
               <!-- 1. Brand + Social -->
@@ -171,46 +318,47 @@
                   <a href="index.html" class="d-inline-block mb-3">
                       <img src="assets/images/logo.svg" alt="Vanguard Footer Logo" class="footer-logo" style="height:40px; width:auto; border-radius:4px;">
                   </a>
-                  <p class="text-white-50 small mb-3">Uncompromising security for individuals, executives, and high-profile assets. Discretion guaranteed.</p>
+                  <p class="small mb-3 fw-bold opacity-75">Uncompromising security for individuals, executives, and high-profile assets. Discretion guaranteed.</p>
                   <div class="d-flex gap-2">
-                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                      <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                      <a href="#" class="btn btn-outline-dark btn-sm rounded-circle" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                      <a href="#" class="btn btn-outline-dark btn-sm rounded-circle" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                      <a href="#" class="btn btn-outline-dark btn-sm rounded-circle" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                   </div>
               </div>
               <!-- 2. Company Links -->
               <div class="col-lg-3 col-md-6 text-start">
-                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Company</h5>
-                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                      <li><a href="about.html" class="text-white-50 text-decoration-none action-link">About Us</a></li>
-                      <li><a href="services.html" class="text-white-50 text-decoration-none action-link">Our Services</a></li>
-                      <li><a href="team.html" class="text-white-50 text-decoration-none action-link">Our Agents</a></li>
-                      <li><a href="contact.html" class="text-white-50 text-decoration-none action-link">Contact</a></li>
+                  <h5 class="text-uppercase mb-3 fw-bold fs-6">Company</h5>
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fw-bold">
+                      <li><a href="about.html" class="text-dark text-decoration-none action-link opacity-75">About Us</a></li>
+                      <li><a href="services.html" class="text-dark text-decoration-none action-link opacity-75">Our Services</a></li>
+                      <li><a href="risk-agents.html" class="text-dark text-decoration-none action-link opacity-75">Risk & Agents</a></li>
+                      <li><a href="testimonials-faq.html" class="text-dark text-decoration-none action-link opacity-75">Success Stories</a></li>
+                      <li><a href="contact.html" class="text-dark text-decoration-none action-link opacity-75">Contact</a></li>
                   </ul>
               </div>
               <!-- 3. Support Links -->
               <div class="col-lg-3 col-md-6 text-start">
-                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Support</h5>
-                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                      <li><a href="dashboard.html" class="text-white-50 text-decoration-none action-link">Client Portal</a></li>
-                      <li><a href="faq.html" class="text-white-50 text-decoration-none action-link">FAQ & Protocol</a></li>
-                      <li><a href="privacy.html" class="text-white-50 text-decoration-none action-link">Privacy Policy</a></li>
-                      <li><a href="terms.html" class="text-white-50 text-decoration-none action-link">Terms of Service</a></li>
+                  <h5 class="text-uppercase mb-3 fw-bold fs-6">Support</h5>
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2 fw-bold">
+                      <li><a href="dashboard.html" class="text-dark text-decoration-none action-link opacity-75">Client Portal</a></li>
+                      <li><a href="testimonials-faq.html" class="text-dark text-decoration-none action-link opacity-75">FAQ & Protocol</a></li>
+                      <li><a href="privacy.html" class="text-dark text-decoration-none action-link opacity-75">Privacy Policy</a></li>
+                      <li><a href="terms.html" class="text-dark text-decoration-none action-link opacity-75">Terms of Service</a></li>
                   </ul>
               </div>
               <!-- 4. Newsletter -->
               <div class="col-lg-3 col-md-6 text-start">
-                  <h5 class="text-uppercase mb-3 fw-bold text-white fs-6">Secure Bulletin</h5>
-                  <p class="text-white-50 small mb-3">Subscribe for the latest threat assessments and security updates.</p>
-                  <form class="d-flex border border-light rounded bg-transparent">
-                      <input type="email" class="form-control bg-transparent border-0 text-white shadow-none ps-3" placeholder="Email address..." required>
-                      <button class="btn btn-light rounded-0 border-0 fw-bold px-3 py-2" type="submit"><i class="bi bi-send"></i></button>
+                  <h5 class="text-uppercase mb-3 fw-bold fs-6">Secure Bulletin</h5>
+                  <p class="small mb-3 fw-bold opacity-75">Subscribe for the latest threat assessments and security updates.</p>
+                  <form class="d-flex border border-dark rounded bg-transparent">
+                      <input type="email" class="form-control bg-transparent border-0 text-dark shadow-none ps-3 placeholder-dark fw-bold" placeholder="Email address..." required>
+                      <button class="btn btn-dark rounded-0 border-0 fw-bold px-3 py-2" type="submit"><i class="bi bi-send text-primary-brand"></i></button>
                   </form>
               </div>
           </div>
-          <hr class="border-light opacity-25 my-4">
+          <hr class="border-dark opacity-25 my-4">
           <div class="text-center">
-              <p class="mb-0 text-white-50 small">&copy; 2026 Vanguard Executive Protection. All Rights Reserved. Strictly Confidential.</p>
+              <p class="mb-0 small fw-bold opacity-75">&copy; 2026 Vanguard Executive Protection. All Rights Reserved. Strictly Confidential.</p>
           </div>
       </div>
   </footer>

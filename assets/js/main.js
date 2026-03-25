@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme toggler
     const themeToggles = document.querySelectorAll('.theme-toggle');
     
-    // Check local storage for existing preference
-    const currentTheme = localStorage.getItem('theme') || 'dark'; // Security sites default dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
     themeToggles.forEach(btn => {
@@ -15,16 +14,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // RTL Toggler
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
+    const bootstrapLink = document.getElementById('bootstrap-link');
+    
+    // Check for RTL preference
+    const currentRtl = localStorage.getItem('rtl') === 'true';
+    if (currentRtl) {
+        document.documentElement.setAttribute('dir', 'rtl');
+        if (bootstrapLink) bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
+    }
+
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            if (isRtl) {
+                document.documentElement.removeAttribute('dir');
+                if (bootstrapLink) bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+                localStorage.setItem('rtl', 'false');
+            } else {
+                document.documentElement.setAttribute('dir', 'rtl');
+                if (bootstrapLink) bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
+                localStorage.setItem('rtl', 'true');
+            }
+        });
+    });
+
     // Active Menu Highlight Logic
     const currentLocation = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
+    // Intelligent Parent Mapping
+    const parentMap = {
+        'service-details.html': 'services.html',
+        'blog-details.html': 'blog.html', // Highlight blog if detail is open
+        'pricing.html': 'services.html',
+        'home-2.html': 'home-2.html',
+        'index.html': 'index.html'
+    };
+
+    const targetLink = parentMap[currentLocation] || currentLocation;
+
     navLinks.forEach(link => {
-        // Remove hardcoded active classes if any
-        link.classList.remove('text-primary-brand');
+        link.classList.remove('active-page');
+        link.classList.remove('text-primary-brand'); // Cleanup old classes if present
         
-        // Add active-page class if the href matches the current file
-        if (link.getAttribute('href') === currentLocation) {
+        const href = link.getAttribute('href');
+        if (href === targetLink) {
             link.classList.add('active-page');
         }
     });
