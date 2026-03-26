@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VANGUARD - RISK REPORTS</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .risk-high { color: #ff3e3e; }
-    .risk-med { color: #ffb800; }
-    .risk-low { color: #00d1ff; }
+    .risk-high {
+      color: #ff3e3e;
+    }
+
+    .risk-med {
+      color: #ffb800;
+    }
+
+    .risk-low {
+      color: #00d1ff;
+    }
   </style>
 </head>
-<body class="portal-body">
+
+<body class="portal-body no-scroll">
 
   <!-- Portal Header -->
   <header class="portal-nav px-2 px-md-4">
     <div class="container-fluid">
       <div class="d-flex align-items-center justify-content-between flex-nowrap">
         <div class="d-flex align-items-center gap-3 flex-nowrap">
-          <button class="btn btn-link text-white-50 d-md-none p-0 border-0 d-inline-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" style="width: auto;">
+          <button class="btn btn-link text-white-50 p-0 border-0 d-inline-flex align-items-center portal-mobile-toggle"
+            type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" style="width: auto;">
             <i class="bi bi-list h3 mb-0"></i>
           </button>
           <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
             <img src="assets/images/logo.svg" alt="Vanguard" style="height: 40px;">
           </a>
           <div class="vr bg-secondary opacity-50 d-none d-md-block" style="height: 30px;"></div>
-          <h6 class="mb-0 fw-bold tracking-wider d-none d-md-block x-small opacity-75 text-uppercase ms-2">Operations Portal</h6>
+          <h6 class="mb-0 fw-bold tracking-wider d-none d-md-block x-small opacity-75 text-uppercase ms-2">Operations
+            Portal</h6>
         </div>
         <div class="d-flex align-items-center gap-3">
           <div class="text-end d-none d-sm-block">
@@ -36,12 +49,16 @@
             <div class="x-small text-white-50">Level 4 Clearance</div>
           </div>
           <div class="dropdown">
-            <button class="btn btn-dark p-1 rounded-circle" data-bs-toggle="dropdown"><img src="assets/images/agent-1.png" class="rounded-circle" style="width: 35px; height: 35px;"></button>
+            <button class="btn btn-dark p-1 rounded-circle" data-bs-toggle="dropdown"><img
+                src="assets/images/agent-1.png" class="rounded-circle" style="width: 35px; height: 35px;"></button>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
               <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
               <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
-              <li><hr class="dropdown-divider border-secondary"></li>
-              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+              <li>
+                <hr class="dropdown-divider border-secondary">
+              </li>
+              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Sign
+                  Out</a></li>
             </ul>
           </div>
         </div>
@@ -49,143 +66,153 @@
     </div>
   </header>
 
-    <div class="row">
-      <!-- Portal Sidebar (Desktop Only) -->
-      <aside class="col-lg-2 col-md-3 p-0 sidebar-portal d-none d-md-block">
-        <nav class="mt-4">
+  <div class="row">
+    <!-- Portal Sidebar (Desktop Only) -->
+    <aside class="col-lg-2 col-md-3 p-0 sidebar-portal">
+      <nav class="mt-4">
+        <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
+        <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
+        <a href="itineraries.html" class="nav-portal-link"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
+        <a href="risk-reports.html" class="nav-portal-link active"><i class="bi bi-file-earmark-lock me-3"></i>Risk
+          Reports</a>
+        <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
+        <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i
+            class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+        <div class="px-4 py-3 d-flex gap-2">
+          <button class="theme-toggle btn text-white-50" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+          <button class="rtl-toggle btn text-white-50" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        </div>
+        <div class="mt-4 pt-2 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+        <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
+      </nav>
+    </aside>
+
+    <!-- Mobile Sidebar (Offcanvas) -->
+    <div class="offcanvas offcanvas-start bg-dark text-white border-end border-light border-opacity-10" tabindex="-1"
+      id="mobileSidebar">
+      <div class="offcanvas-header justify-content-end p-3">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <nav class="mt-2">
           <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
           <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
           <a href="itineraries.html" class="nav-portal-link"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
-          <a href="risk-reports.html" class="nav-portal-link active"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
+          <a href="risk-reports.html" class="nav-portal-link active"><i class="bi bi-file-earmark-lock me-3"></i>Risk
+            Reports</a>
           <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
-          <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
-          <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
-          <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
-
-          <div class="px-4 py-3 border-top border-light border-opacity-10 d-flex gap-2">
-            <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
-            <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i
+              class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+          <div class="px-4 py-3 d-flex gap-2">
+            <button class="theme-toggle btn text-white-50" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+            <button class="rtl-toggle btn text-white-50" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
           </div>
+          <div class="mt-4 pt-2 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+          <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
         </nav>
-      </aside>
+      </div>
+    </div>
 
-      <!-- Mobile Sidebar (Offcanvas) -->
-      <div class="offcanvas offcanvas-start bg-dark text-white border-end border-light border-opacity-10" tabindex="-1" id="mobileSidebar">
-        <div class="offcanvas-header justify-content-end p-3">
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <!-- Portal Main Content -->
+    <main class="col-lg-10 col-md-9 p-4 portal-main-content">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+        <h2 class="fw-bold mb-0">Risk Reports</h2>
+        <button class="btn btn-primary-brand btn-sm rounded-0">REQUEST INTEL BRIEFING</button>
+      </div>
+
+      <!-- Global Threat Overview -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-3 col-6">
+          <div class="card card-portal p-3 h-100">
+            <div class="x-small text-white-50 text-uppercase fw-bold mb-2">South East Asia</div>
+            <div class="h4 fw-bold risk-high mb-0">CRITICAL</div>
+            <div class="small text-white-50 mt-1">High civil unrest risk</div>
+          </div>
         </div>
-        <div class="offcanvas-body p-0">
-          <nav class="mt-2">
-            <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
-            <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
-            <a href="itineraries.html" class="nav-portal-link"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
-            <a href="risk-reports.html" class="nav-portal-link active"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
-            <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
-            <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
-            <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
-            <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
-
-            <div class="px-4 py-3 border-top border-light border-opacity-10 d-flex gap-2">
-              <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
-              <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
-            </div>
-          </nav>
+        <div class="col-lg-3 col-6">
+          <div class="card card-portal p-3 h-100">
+            <div class="x-small text-white-50 text-uppercase fw-bold mb-2">Western Europe</div>
+            <div class="h4 fw-bold risk-low mb-0">STABLE</div>
+            <div class="small text-white-50 mt-1">No major threats</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="card card-portal p-3 h-100">
+            <div class="x-small text-white-50 text-uppercase fw-bold mb-2">North America</div>
+            <div class="h4 fw-bold risk-med mb-0">ELEVATED</div>
+            <div class="small text-white-50 mt-1">Cyber security watch active</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-6">
+          <div class="card card-portal p-3 h-100">
+            <div class="x-small text-white-50 text-uppercase fw-bold mb-2">Middle East</div>
+            <div class="h4 fw-bold risk-high mb-0">EXTREME</div>
+            <div class="small text-white-50 mt-1">Active war zone warnings</div>
+          </div>
         </div>
       </div>
 
-      <!-- Portal Main Content -->
-      <main class="col-lg-10 col-md-9 p-4">
-        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
-          <h2 class="fw-bold mb-0">Risk Reports</h2>
-          <button class="btn btn-primary-brand btn-sm rounded-0">REQUEST INTEL BRIEFING</button>
-        </div>
-
-        <!-- Global Threat Overview -->
-        <div class="row g-4 mb-5">
-          <div class="col-md-3">
-             <div class="card card-portal p-3">
-                <div class="x-small text-white-50 text-uppercase fw-bold mb-2">South East Asia</div>
-                <div class="h4 fw-bold risk-high mb-0">CRITICAL</div>
-                <div class="small text-white-50 mt-1">High civil unrest risk</div>
-             </div>
-          </div>
-          <div class="col-md-3">
-             <div class="card card-portal p-3">
-                <div class="x-small text-white-50 text-uppercase fw-bold mb-2">Western Europe</div>
-                <div class="h4 fw-bold risk-low mb-0">STABLE</div>
-                <div class="small text-white-50 mt-1">No major threats</div>
-             </div>
-          </div>
-          <div class="col-md-3">
-             <div class="card card-portal p-3">
-                <div class="x-small text-white-50 text-uppercase fw-bold mb-2">North America</div>
-                <div class="h4 fw-bold risk-med mb-0">ELEVATED</div>
-                <div class="small text-white-50 mt-1">Cyber security watch active</div>
-             </div>
-          </div>
-          <div class="col-md-3">
-             <div class="card card-portal p-3">
-                <div class="x-small text-white-50 text-uppercase fw-bold mb-2">Middle East</div>
-                <div class="h4 fw-bold risk-high mb-0">EXTREME</div>
-                <div class="small text-white-50 mt-1">Active war zone warnings</div>
-             </div>
-          </div>
-        </div>
-
-        <!-- Intelligence Grid -->
-        <h5 class="fw-bold mb-3 text-uppercase x-small tracking-wider text-white-50">Latest Intelligence Reports</h5>
-        <div class="row g-4">
-          <div class="col-md-6 col-xl-4">
-            <div class="card card-portal p-0 h-100">
-              <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <i class="bi bi-file-earmark-pdf h2 text-primary-brand mb-0"></i>
-                  <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-0 small">TOP SECRET</span>
-                </div>
-                <h6 class="fw-bold mb-2">V-REP-2026-03-A (Seoul Sector)</h6>
-                <p class="x-small text-white-50 mb-4">Comprehensive threat assessment of the upcoming presidential summit and executive security implications.</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                   <div class="x-small text-white-50">Updated: 2h ago</div>
-                   <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">DOWNLOAD PDF</button>
-                </div>
+      <!-- Intelligence Grid -->
+      <h5 class="fw-bold mb-3 text-uppercase x-small tracking-wider text-white-50">Latest Intelligence Reports</h5>
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="card card-portal p-0 h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <i class="bi bi-file-earmark-pdf h2 text-primary-brand mb-0"></i>
+                <span
+                  class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-0 small">TOP
+                  SECRET</span>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <div class="card card-portal p-0 h-100">
-              <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <i class="bi bi-file-earmark-bar-graph h2 text-primary-brand mb-0"></i>
-                  <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-0 small">CONFIDENTIAL</span>
-                </div>
-                <h6 class="fw-bold mb-2">Quarterly Global Threat Landscape</h6>
-                <p class="x-small text-white-50 mb-4">Detailed analysis of emerging 2026 security trends including AI-assisted corporate espionage.</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                   <div class="x-small text-white-50">Updated: 1 day ago</div>
-                   <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">DOWNLOAD PDF</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-4">
-            <div class="card card-portal p-0 h-100">
-              <div class="card-body p-4">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                  <i class="bi bi-shield-lock h2 text-primary-brand mb-0"></i>
-                  <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-0 small">CONFIDENTIAL</span>
-                </div>
-                <h6 class="fw-bold mb-2">Asset Protocol Update V9.2</h6>
-                <p class="x-small text-white-50 mb-4">Revised standard operating procedures for executive close protection in high-density urban environments.</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                   <div class="x-small text-white-50">Updated: MAR 15</div>
-                   <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">VIEW PROTOCOL</button>
-                </div>
+              <h6 class="fw-bold mb-2">V-REP-2026-03-A (Seoul Sector)</h6>
+              <p class="x-small text-white-50 mb-4">Comprehensive threat assessment of the upcoming presidential summit
+                and executive security implications.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="x-small text-white-50">Updated: 2h ago</div>
+                <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">DOWNLOAD PDF</button>
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="card card-portal p-0 h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <i class="bi bi-file-earmark-bar-graph h2 text-primary-brand mb-0"></i>
+                <span
+                  class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-0 small">CONFIDENTIAL</span>
+              </div>
+              <h6 class="fw-bold mb-2">Quarterly Global Threat Landscape</h6>
+              <p class="x-small text-white-50 mb-4">Detailed analysis of emerging 2026 security trends including
+                AI-assisted corporate espionage.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="x-small text-white-50">Updated: 1 day ago</div>
+                <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">DOWNLOAD PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="card card-portal p-0 h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <i class="bi bi-shield-lock h2 text-primary-brand mb-0"></i>
+                <span
+                  class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-0 small">CONFIDENTIAL</span>
+              </div>
+              <h6 class="fw-bold mb-2">Asset Protocol Update V9.2</h6>
+              <p class="x-small text-white-50 mb-4">Revised standard operating procedures for executive close protection
+                in high-density urban environments.</p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <div class="x-small text-white-50">Updated: MAR 15</div>
+                <button class="btn btn-link text-primary-brand p-0 x-small fw-bold">VIEW PROTOCOL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
   </div>
 
   <footer class="mt-auto py-3 border-top border-light border-opacity-10 text-center x-small text-white-50">
@@ -195,4 +222,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -134,6 +134,9 @@ h6 {
 
 /* 280px - 1100px -> Mobile/Tablet */
 @media (max-width: 1100px) {
+    :root {
+        --header-height: 60px;
+    }
     .navbar {
         padding-bottom: 5px;
     }
@@ -366,12 +369,20 @@ h6 {
     border-radius: 4px;
     width: 40px;
     height: 40px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: 0.3s;
     padding: 0;
+}
+
+.offcanvas .theme-toggle,
+.offcanvas .rtl-toggle {
+    width: auto;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 [data-bs-theme="light"] .theme-toggle,
@@ -400,11 +411,11 @@ h6 {
 .hero-section {
     background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('../images/hero-elite.png') center/cover;
     color: #fff !important;
-    height: calc(100vh - 70px);
-    overflow: hidden;
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
     border-bottom: 3px solid var(--primary-color);
+    padding: 60px 0;
 }
 
 .hero-section h1 {
@@ -518,10 +529,12 @@ footer .action-link:hover {
     }
 
     .btn.btn-lg {
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.8rem !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
         width: 100%;
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
         white-space: nowrap;
     }
 }
@@ -598,6 +611,21 @@ footer .action-link:hover {
 [data-bs-theme="light"] .hero-section {
     background-color: #ffffff !important;
     color: #000 !important;
+    background-image: none !important;
+}
+
+/* Responsive Typography for Hero */
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 2.22rem !important; /* Slightly adjusted to ensure uniqueness */
+    }
+    .hero-section .lead {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .hero-section {
+        padding: 40px 0 !important;
+    }
 }
 
 [data-bs-theme="light"] .bg-dark {
@@ -782,10 +810,29 @@ footer .action-link:hover {
 }
 
 /* --- Portal / Dashboard Shared Styles --- */
+:root {
+    --header-height: 70px;
+}
+
+.portal-body {
+    --header-height: 73px;
+}
+
+.no-scroll {
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.scrollable-content {
+    height: 100vh;
+    padding-top: var(--header-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .portal-body {
     background: var(--portal-bg) !important;
     color: var(--text-color) !important;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
@@ -807,7 +854,27 @@ footer .action-link:hover {
 .sidebar-portal {
     background: #0d0d0d !important; /* Fixed dark background */
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-    min-height: calc(100vh - 73px);
+    height: 100vh;
+    padding-top: var(--header-height);
+    overflow-y: auto;
+}
+
+[data-bs-theme="light"] .sidebar-portal .text-white {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="light"] .sidebar-portal .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-bs-theme="light"] .offcanvas-portal,
+[data-bs-theme="light"] #mobileSidebar {
+    background-color: #0d0d0d !important;
+    color: #ffffff !important;
+}
+
+[data-bs-theme="light"] #mobileSidebar .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .nav-portal-link {
@@ -829,6 +896,12 @@ footer .action-link:hover {
     color: var(--primary-color) !important;
     background: rgba(255, 255, 255, 0.05) !important;
     border-left-color: var(--primary-color) !important;
+}
+
+.portal-main-content {
+    height: 100vh;
+    padding-top: var(--header-height);
+    overflow-y: auto;
 }
 
 .card-portal {
@@ -865,4 +938,21 @@ footer .action-link:hover {
     font-weight: bold;
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 4px;
+}
+
+/* Portal Responsiveness (1100px) */
+@media (max-width: 1100px) {
+    .sidebar-portal {
+        display: none !important;
+    }
+    .portal-main-content {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+    .portal-mobile-toggle {
+        display: inline-flex !important;
+    }
 }

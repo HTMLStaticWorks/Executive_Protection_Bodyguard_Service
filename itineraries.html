@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VANGUARD - ITINERARIES</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link id="bootstrap-link" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .timeline-item { border-left: 2px solid var(--portal-border); padding-left: 1.5rem; padding-bottom: 2rem; position: relative; }
-    .timeline-item::before { content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: var(--primary-brand); border-radius: 50%; }
+    .timeline-item {
+      border-left: 2px solid var(--portal-border);
+      padding-left: 1.5rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: var(--primary-brand);
+      border-radius: 50%;
+    }
   </style>
 </head>
-<body class="portal-body">
+
+<body class="portal-body no-scroll">
 
   <!-- Portal Header -->
   <header class="portal-nav px-2 px-md-4">
     <div class="container-fluid">
       <div class="d-flex align-items-center justify-content-between flex-nowrap">
         <div class="d-flex align-items-center gap-3 flex-nowrap">
-          <button class="btn btn-link text-white-50 d-md-none p-0 border-0 d-inline-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" style="width: auto;">
+          <button class="btn btn-link text-white-50 p-0 border-0 d-inline-flex align-items-center portal-mobile-toggle"
+            type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" style="width: auto;">
             <i class="bi bi-list h3 mb-0"></i>
           </button>
           <a href="index.html" class="d-inline-flex align-items-center text-decoration-none">
             <img src="assets/images/logo.svg" alt="Vanguard" style="height: 40px;">
           </a>
           <div class="vr bg-secondary opacity-50 d-none d-md-block" style="height: 30px;"></div>
-          <h6 class="mb-0 fw-bold tracking-wider d-none d-md-block x-small opacity-75 text-uppercase ms-2">Operations Portal</h6>
+          <h6 class="mb-0 fw-bold tracking-wider d-none d-md-block x-small opacity-75 text-uppercase ms-2">Operations
+            Portal</h6>
         </div>
         <div class="d-flex align-items-center gap-3">
           <div class="text-end d-none d-sm-block">
@@ -35,12 +55,16 @@
             <div class="x-small text-white-50">Level 4 Clearance</div>
           </div>
           <div class="dropdown">
-            <button class="btn btn-dark p-1 rounded-circle" data-bs-toggle="dropdown"><img src="assets/images/agent-1.png" class="rounded-circle" style="width: 35px; height: 35px;"></button>
+            <button class="btn btn-dark p-1 rounded-circle" data-bs-toggle="dropdown"><img
+                src="assets/images/agent-1.png" class="rounded-circle" style="width: 35px; height: 35px;"></button>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
               <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
               <li><a class="dropdown-item text-white-50" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
-              <li><hr class="dropdown-divider border-secondary"></li>
-              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+              <li>
+                <hr class="dropdown-divider border-secondary">
+              </li>
+              <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right me-2"></i>Sign
+                  Out</a></li>
             </ul>
           </div>
         </div>
@@ -48,113 +72,117 @@
     </div>
   </header>
 
-    <div class="row">
-      <!-- Portal Sidebar (Desktop Only) -->
-      <aside class="col-lg-2 col-md-3 p-0 sidebar-portal d-none d-md-block">
-        <nav class="mt-4">
+  <div class="row">
+    <!-- Portal Sidebar (Desktop Only) -->
+    <aside class="col-lg-2 col-md-3 p-0 sidebar-portal">
+      <nav class="mt-4">
+        <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
+        <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
+        <a href="itineraries.html" class="nav-portal-link active"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
+        <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
+        <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
+        <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i
+            class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+        <div class="px-4 py-3 d-flex gap-2">
+          <button class="theme-toggle btn text-white-50" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+          <button class="rtl-toggle btn text-white-50" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        </div>
+        <div class="mt-4 pt-2 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+        <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
+      </nav>
+    </aside>
+
+    <!-- Mobile Sidebar (Offcanvas) -->
+    <div class="offcanvas offcanvas-start bg-dark text-white border-end border-light border-opacity-10" tabindex="-1"
+      id="mobileSidebar">
+      <div class="offcanvas-header justify-content-end p-3">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body p-0">
+        <nav class="mt-2">
           <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
           <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
           <a href="itineraries.html" class="nav-portal-link active"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
-          <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
+          <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk
+            Reports</a>
           <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
-          <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
-          <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
-          <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
-
-          <div class="px-4 py-3 border-top border-light border-opacity-10 d-flex gap-2">
-            <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
-            <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i
+              class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
+          <div class="px-4 py-3 d-flex gap-2">
+            <button class="theme-toggle btn text-white-50" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+            <button class="rtl-toggle btn text-white-50" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
           </div>
+          <div class="mt-4 pt-2 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
+          <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
         </nav>
-      </aside>
+      </div>
+    </div>
 
-      <!-- Mobile Sidebar (Offcanvas) -->
-      <div class="offcanvas offcanvas-start bg-dark text-white border-end border-light border-opacity-10" tabindex="-1" id="mobileSidebar">
-        <div class="offcanvas-header justify-content-end p-3">
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-0">
-          <nav class="mt-2">
-            <a href="dashboard.html" class="nav-portal-link"><i class="bi bi-speedometer2 me-3"></i>Dashboard</a>
-            <a href="active-assets.html" class="nav-portal-link"><i class="bi bi-shield-check me-3"></i>Active Assets</a>
-            <a href="itineraries.html" class="nav-portal-link active"><i class="bi bi-geo-alt me-3"></i>Itineraries</a>
-            <a href="risk-reports.html" class="nav-portal-link"><i class="bi bi-file-earmark-lock me-3"></i>Risk Reports</a>
-            <a href="secure-comms.html" class="nav-portal-link"><i class="bi bi-chat-dots me-3"></i>Secure Comms</a>
-            <a href="index.html" class="nav-portal-link text-danger border-0 mt-4"><i class="bi bi-box-arrow-right me-3"></i>Exit to Home</a>
-            <div class="mt-5 pt-4 px-4 x-small text-white-50 text-uppercase fw-bold">System Status</div>
-            <div class="px-4 py-2 x-small text-success mb-3"><i class="bi bi-dot me-1"></i>Encrypted Connection</div>
-
-            <div class="px-4 py-3 border-top border-light border-opacity-10 d-flex gap-2">
-              <button class="theme-toggle btn" aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
-              <button class="rtl-toggle btn" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
-            </div>
-          </nav>
-        </div>
+    <!-- Portal Main Content -->
+    <main class="col-lg-10 col-md-9 p-4 portal-main-content">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+        <h2 class="fw-bold mb-0">Itineraries</h2>
+        <button class="btn btn-primary-brand btn-sm rounded-0">GENERATE TRANSPORT LOG</button>
       </div>
 
-      <!-- Portal Main Content -->
-      <main class="col-lg-10 col-md-9 p-4">
-        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
-          <h2 class="fw-bold mb-0">Itineraries</h2>
-          <button class="btn btn-primary-brand btn-sm rounded-0">GENERATE TRANSPORT LOG</button>
-        </div>
-
-        <div class="row g-4">
-          <!-- Timeline Section -->
-          <div class="col-lg-8">
-            <h5 class="fw-bold mb-4 text-uppercase x-small tracking-wider text-white-50">Active & Upcoming Movements</h5>
-            <div class="card card-portal p-4 shadow-sm">
-              <div class="timeline-item">
-                <div class="small text-primary-brand fw-bold mb-1">MAR 25, 2026 - 14:00</div>
-                <h6 class="fw-bold mb-2">Ground Transport: ICN -> Seoul Central</h6>
-                <p class="x-small text-white-50 mb-0">High-profile principal transport. Armored escort unit V-VEH-09. Status: Initiated.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="small text-white-50 fw-bold mb-1">MAR 26, 2026 - 09:00</div>
-                <h6 class="fw-bold mb-2">Secure Meeting: Fortune 500 HQ</h6>
-                <p class="x-small text-white-50 mb-0">Tactical sweep scheduled Mar 26, 06:00. Level 4 clearance required for all on-site agents.</p>
-              </div>
-              <div class="timeline-item">
-                <div class="small text-white-50 fw-bold mb-1">MAR 27, 2026 - 21:00</div>
-                <h6 class="fw-bold mb-2">Flight Departure: Seoul (ICN) -> Singapore (SIN)</h6>
-                <p class="x-small text-white-50 mb-0">Vanguard Air - Unit V-AIR-02. Private terminal access confirmed.</p>
-              </div>
-              <div class="timeline-item border-0 pb-0">
-                <div class="small text-white-50 fw-bold mb-1">APR 02, 2026</div>
-                <h6 class="fw-bold mb-2">End of Mission: Principal Safe Return</h6>
-                <p class="x-small text-white-50 mb-0">Final briefing and asset demobilization.</p>
-              </div>
+      <div class="row g-4">
+        <!-- Timeline Section -->
+        <div class="col-lg-8">
+          <h5 class="fw-bold mb-4 text-uppercase x-small tracking-wider text-white-50">Active & Upcoming Movements</h5>
+          <div class="card card-portal p-4 shadow-sm">
+            <div class="timeline-item">
+              <div class="small text-primary-brand fw-bold mb-1">MAR 25, 2026 - 14:00</div>
+              <h6 class="fw-bold mb-2">Ground Transport: ICN -> Seoul Central</h6>
+              <p class="x-small text-white-50 mb-0">High-profile principal transport. Armored escort unit V-VEH-09.
+                Status: Initiated.</p>
             </div>
-          </div>
-
-          <!-- Quick Stats / Logistics -->
-          <div class="col-lg-4">
-            <h5 class="fw-bold mb-4 text-uppercase x-small tracking-wider text-white-50">Logistics Overview</h5>
-            <div class="card card-portal p-3 mb-4">
-              <div class="small text-white-50 mb-1">Current Transit</div>
-              <div class="h5 fw-bold mb-3">V-AIR-02 (En Route)</div>
-              <div class="d-flex justify-content-between x-small mb-1">
-                <span>Altitude: 41,000 ft</span>
-                <span>Speed: 520 kts</span>
-              </div>
-              <div class="progress bg-white bg-opacity-10 rounded-0" style="height: 4px;">
-                <div class="progress-bar bg-primary-brand" style="width: 72%;"></div>
-              </div>
+            <div class="timeline-item">
+              <div class="small text-white-50 fw-bold mb-1">MAR 26, 2026 - 09:00</div>
+              <h6 class="fw-bold mb-2">Secure Meeting: Fortune 500 HQ</h6>
+              <p class="x-small text-white-50 mb-0">Tactical sweep scheduled Mar 26, 06:00. Level 4 clearance required
+                for all on-site agents.</p>
             </div>
-
-            <div class="card card-portal p-3">
-              <h6 class="fw-bold mb-3">Terminal Access Codes</h6>
-              <div class="bg-black bg-opacity-50 p-2 mb-2">
-                <span class="font-monospace x-small text-success">JFK-T8-X991</span>
-              </div>
-              <div class="bg-black bg-opacity-50 p-2">
-                <span class="font-monospace x-small text-secondary">ICN-T1-E442 (Pending)</span>
-              </div>
+            <div class="timeline-item">
+              <div class="small text-white-50 fw-bold mb-1">MAR 27, 2026 - 21:00</div>
+              <h6 class="fw-bold mb-2">Flight Departure: Seoul (ICN) -> Singapore (SIN)</h6>
+              <p class="x-small text-white-50 mb-0">Vanguard Air - Unit V-AIR-02. Private terminal access confirmed.</p>
+            </div>
+            <div class="timeline-item border-0 pb-0">
+              <div class="small text-white-50 fw-bold mb-1">APR 02, 2026</div>
+              <h6 class="fw-bold mb-2">End of Mission: Principal Safe Return</h6>
+              <p class="x-small text-white-50 mb-0">Final briefing and asset demobilization.</p>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+
+        <!-- Quick Stats / Logistics -->
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-4 text-uppercase x-small tracking-wider text-white-50">Logistics Overview</h5>
+          <div class="card card-portal p-3 mb-4">
+            <div class="small text-white-50 mb-1">Current Transit</div>
+            <div class="h5 fw-bold mb-3">V-AIR-02 (En Route)</div>
+            <div class="d-flex justify-content-between x-small mb-1">
+              <span>Altitude: 41,000 ft</span>
+              <span>Speed: 520 kts</span>
+            </div>
+            <div class="progress bg-white bg-opacity-10 rounded-0" style="height: 4px;">
+              <div class="progress-bar bg-primary-brand" style="width: 72%;"></div>
+            </div>
+          </div>
+
+          <div class="card card-portal p-3">
+            <h6 class="fw-bold mb-3">Terminal Access Codes</h6>
+            <div class="bg-black bg-opacity-50 p-2 mb-2">
+              <span class="font-monospace x-small text-success">JFK-T8-X991</span>
+            </div>
+            <div class="bg-black bg-opacity-50 p-2">
+              <span class="font-monospace x-small text-secondary">ICN-T1-E442 (Pending)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
   </div>
 
   <footer class="mt-auto py-3 border-top border-light border-opacity-10 text-center x-small text-white-50">
@@ -164,4 +192,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
