@@ -64,4 +64,49 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active-page');
         }
     });
+
+    // Scroll to Top Logic
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    const getScrollContainers = () => {
+        return [
+            window,
+            document.querySelector('.scrollable-content'),
+            document.querySelector('.portal-main-content')
+        ].filter(el => el !== null);
+    };
+
+    const handleScroll = () => {
+        const containers = getScrollContainers();
+        let show = false;
+        
+        containers.forEach(container => {
+            const scrollTop = container === window ? window.scrollY : container.scrollTop;
+            if (scrollTop > 300) show = true;
+        });
+
+        if (show) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    };
+
+    if (backToTopBtn) {
+        const containers = getScrollContainers();
+        
+        containers.forEach(container => {
+            container.addEventListener('scroll', handleScroll);
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            const containers = getScrollContainers();
+            containers.forEach(container => {
+                const scrollTop = container === window ? window.scrollY : container.scrollTop;
+                if (scrollTop > 0) {
+                    container.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    }
 });
