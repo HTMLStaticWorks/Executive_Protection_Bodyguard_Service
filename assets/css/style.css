@@ -854,6 +854,8 @@ footer .action-link:hover {
 .no-scroll {
     height: 100vh !important;
     overflow: hidden !important;
+    display: flex;
+    flex-direction: column;
 }
 
 .scrollable-content {
@@ -887,8 +889,7 @@ footer .action-link:hover {
 .sidebar-portal {
     background: #0d0d0d !important; /* Fixed dark background */
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
-    height: 100vh;
-    padding-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
     overflow-y: auto;
 }
 
@@ -932,8 +933,7 @@ footer .action-link:hover {
 }
 
 .portal-main-content {
-    height: 100vh;
-    padding-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
     overflow-y: auto;
 }
 
