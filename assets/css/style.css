@@ -137,6 +137,7 @@ h6 {
     :root {
         --header-height: 60px;
     }
+
     .navbar {
         padding-bottom: 5px;
     }
@@ -650,12 +651,15 @@ footer .action-link:hover {
 /* Responsive Typography for Hero */
 @media (max-width: 575.98px) {
     .hero-section h1 {
-        font-size: 2.22rem !important; /* Slightly adjusted to ensure uniqueness */
+        font-size: 2.22rem !important;
+        /* Slightly adjusted to ensure uniqueness */
     }
+
     .hero-section .lead {
         font-size: 1rem !important;
         margin-bottom: 1.5rem !important;
     }
+
     .hero-section {
         padding: 40px 0 !important;
     }
@@ -887,7 +891,8 @@ footer .action-link:hover {
 
 /* Sidebar - Forced Dark Appearance */
 .sidebar-portal {
-    background: #0d0d0d !important; /* Fixed dark background */
+    background: #0d0d0d !important;
+    /* Fixed dark background */
     border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
     height: calc(100vh - var(--header-height));
     overflow-y: auto;
@@ -985,6 +990,7 @@ footer .action-link:hover {
         transform: scale(1);
         opacity: 0.6;
     }
+
     100% {
         transform: scale(2.5);
         opacity: 0;
@@ -1013,6 +1019,7 @@ footer .action-link:hover {
     .sidebar-portal {
         display: none !important;
     }
+
     .portal-main-content {
         width: 100% !important;
         flex: 0 0 100% !important;
@@ -1020,6 +1027,7 @@ footer .action-link:hover {
         height: calc(100vh - var(--header-height));
         overflow-y: auto;
     }
+
     .portal-mobile-toggle {
         display: inline-flex !important;
     }
@@ -1077,7 +1085,7 @@ footer .action-link:hover {
         width: 40px;
         height: 40px;
     }
-    
+
     [dir="rtl"] .back-to-top {
         right: auto;
         left: 20px;
